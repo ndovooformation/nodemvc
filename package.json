@@ -1,0 +1,20 @@
+{
+  "name": "nodemvc",
+  "version": "1.0.0",
+  "description": "Mon premier projet nodejs avec MVC",
+  "homepage": "https://github.com/ndovooformation/nodemvc#readme",
+  "bugs": {
+    "url": "https://github.com/ndovooformation/nodemvc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndovooformation/nodemvc.git"
+  },
+  "license": "ISC",
+  "author": "ndovoo",
+  "type": "commonjs",
+  "main": "myserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
