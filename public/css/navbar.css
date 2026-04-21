@@ -1,7 +1,37 @@
 /*
  * Mise en forme de la navbar (barre de navigation)
 */
+
 .navbar {
-    width: 100%;
+    width: 100%; /* couvre toute la taille de l'écran*/
     background-color: #555;
+    overflow: auto;
+}
+/*Je sélectionne la classe "navbar" et les balises <a>*/
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* lorsque je survole les liens href de la bare de navigation. La couleur change lorsque la souris passe par dessus de la barre de navigation. */
+.navbar a:hover {
+    background-color: #000;
+}
+
+/* l'élément de la classe "active" devient vert*/
+.active {
+    background-color: #04AA6D;
+}
+
+/* Je rends responsive la barre de naivigation. Il pourra s'adapter à toutes les tailles d'écrans (smartphone, tablette et TV et ordinateur) */
+/*La barre de navigation est affiché verticalement (du haut vers le bas) */
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block; /*Affiche le menu verticalement au lieu d'horizontalement*/
+    }
 }
