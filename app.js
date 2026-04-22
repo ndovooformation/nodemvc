@@ -17,6 +17,7 @@ const accueilRoute = require("./routes/accueilRoute");
 // J'importe la route authentificationRoute.js
 const authRoute = require("./routes/authentificationRoute");
 
+const db = require("./models");
 // J'initie l'aplication expressjs
 const app = express();
 
@@ -27,16 +28,25 @@ app.set("view engine", "ejs");
 // Utiliser les fichiers statiques qui sont dans le dossier public
 app.use(express.static("public"));
 
-// configurer la connection à la base de données
-const optionConnection = {
+// Extraire les données saisies dans le formulaire
+app.use(express.urlencoded({extended: false}));
+
+db.sequelize.sync({force: true}).then(() => {
+    console.log("Sync db");
+}).catch((err) => {
+    console.log("Failed to sync db : " + err.message);
+});
+
+// A supprimer pour laisser Sequelize - configurer la connection à la base de données
+/*const optionConnection = {
     host: "localhost",
     user: "root",
     password : "pd+12SQm",
     port : 3306,
     database : "maygourmet"
 };
-
-app.use(myConnection(mysql2, optionConnection, "pool"));
+*/
+//app.use(myConnection(mysql2, optionConnection, "pool"));
 
 app.use("/", accueilRoute);
 

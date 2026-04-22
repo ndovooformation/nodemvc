@@ -1,10 +1,22 @@
 /**
  * User.js est un modèle qui sert à créer des utilisateurs. Le modèle User est de : id, email et password
  */
-const DataTypes = require("sequelize");
 
-const sequelize = require("../db");
+module.exports = (sequelize, Sequelize) => {
+    const UserModel = sequelize.define("user", {
+        email: {
+            type: Sequelize.STRING,
+            unique: true
+        },
+        password: {
+            type: Sequelize.STRING
+        }
+    });
 
+    return UserModel;
+}
+
+/*
 module.exports = sequelize.define(
     'user', {
         id: {
@@ -21,3 +33,4 @@ module.exports = sequelize.define(
         },
     }
 );
+*/

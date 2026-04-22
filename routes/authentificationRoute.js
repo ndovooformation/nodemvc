@@ -8,12 +8,15 @@ const express = require("express");
 
 const authController = require("../controllers/authentificationController");
 
+const userController = require('../controllers/userController');
 const router = express.Router();
 
 router.get("/register", authController.registerView);
 
 
-router.post("/register", authController.registerUser);
+//router.post("/register", authController.registerUser);
+
+router.post("/register", userController.create);
 
 // J'exporte le "router" pour le rendre accessible depuis d'autres fichiers de l'application
 module.exports = router;
