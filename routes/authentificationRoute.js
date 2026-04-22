@@ -16,7 +16,13 @@ router.get("/register", authController.registerView);
 
 //router.post("/register", authController.registerUser);
 
+// Route API pour créer un nouvel utilisateur
 router.post("/register", userController.create);
+
+// Route API pour rechercher un utilisateur à l'aide de son id
+router.get("/users/:id", userController.findOne);
+
+router.get("/users", userController.findAll);
 
 // J'exporte le "router" pour le rendre accessible depuis d'autres fichiers de l'application
 module.exports = router;

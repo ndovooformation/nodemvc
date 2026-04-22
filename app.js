@@ -31,7 +31,7 @@ app.use(express.static("public"));
 // Extraire les données saisies dans le formulaire
 app.use(express.urlencoded({extended: false}));
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
     console.log("Sync db");
 }).catch((err) => {
     console.log("Failed to sync db : " + err.message);
